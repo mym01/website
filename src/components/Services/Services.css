@@ -1,0 +1,74 @@
+.services {
+    /* --swiper-navigation-top-offset: 50%; */
+    --swiper-navigation-sides-offset: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: var(--white);
+}
+
+.services-card {
+    background-color: var(--main-bg);
+    color: var(--main-text);
+    padding: 40px;
+    border-radius: 6px;
+    height: 100%;
+
+    transition: all 0.3s;
+}
+
+.services-card:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.services-card:hover .services-card-icon svg path {
+    fill: var(--white);
+}
+
+/* .services-heading {
+    margin-bottom: 4px;
+    font-size: 3rem;
+} */
+
+.services-text {
+    margin-bottom: 40px;
+}
+
+.services-swiper-container {
+    padding: 60px;
+}
+
+.services .mySwiper {
+    padding: 0 40px 40px;
+}
+
+.services .swiper-button-next,
+.services .swiper-button-prev {
+    background-color: var(--main-blue);
+    color: var(--white);
+    height: 100%;
+    width: 40px;
+    top: 0;
+}
+
+.services .swiper-button-next {
+    left: 0;
+}
+
+.services .swiper-button-prev {
+    right: 0;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--white);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--main-color);
+}
+
+@media (max-width: 1200px) {
+    .services-card {
+        padding: 20px;
+    }
+}

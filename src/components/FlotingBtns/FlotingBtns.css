@@ -1,0 +1,55 @@
+.btn-floting {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: fixed;
+    bottom: -100px;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    outline: none;
+    transition: all 0.4s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+}
+
+.btn-floting--show {
+    bottom: 30px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-floting img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-floting--whatsapp {
+    right: 20px;
+}
+
+.btn-floting--top {
+    left: 20px;
+}
+
+@media (max-width: 400px) {
+    .btn-floting {
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-floting--show {
+        bottom: 7px;
+    }
+
+    .btn-floting--whatsapp {
+        right: 7px;
+    }
+
+    .btn-floting--top {
+        left: 7px;
+    }
+}

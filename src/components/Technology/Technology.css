@@ -1,0 +1,85 @@
+.technology {
+    padding-block: 40px;
+}
+
+.technology-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 46px;
+    margin-top: 60px;
+}
+
+.technology-card {
+    padding: 4rem 6rem;
+    background-color: var(--main-bg);
+    border-radius: 1rem;
+    box-shadow: 0 6px 1rem rgba(0, 0, 0, 0.3);
+    color: var(--main-text);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    width: 31%;
+
+    transition: all 0.2s;
+    user-select: none;
+    cursor: pointer;
+}
+
+.technology-card-number {
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--main-color);
+    /* display: flex;
+    align-items: end;
+    justify-content: center; */
+    font-size: 4.8rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 50%;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 4px;
+    transition: inherit;
+}
+
+.technology-card-heading {
+    font-size: 3.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.technology-card-icon {
+    fill: var(--main-text);
+}
+
+.technology-card:hover {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.technology-card:hover .technology-card-number {
+    background-color: var(--white);
+    color: var(--main-color);
+}
+
+@media (max-width: 600px) {
+    .technology-card {
+        width: 48%;
+    }
+}
+
+@media (max-width: 400px) {
+    .technology-card {
+        width: 100%;
+    }
+}

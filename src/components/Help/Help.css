@@ -1,0 +1,30 @@
+.help {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+.help__container {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 40px;
+}
+
+.help__card {
+    width: 32%;
+    flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+    .help__card {
+        width: 49%;
+    }
+}
+
+@media (max-width: 400px) {
+    .help__card {
+        width: 100%;
+    }
+}

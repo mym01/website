@@ -1,0 +1,137 @@
+.team {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-btns__container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 0 12px;
+}
+
+.team-btns__btn {
+    padding: 14px 28px;
+    border: 1px solid var(--main-color);
+    color: var(--main-text);
+    background-color: var(--main-bg);
+    border-radius: 8px;
+    font-size: 2.8rem;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.team-btns__btn:hover {
+    opacity: 1;
+}
+
+.team-btns__btn--active {
+    background-color: var(--main-color);
+    color: var(--white);
+    opacity: 1;
+}
+
+.team-cards__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px 20px;
+}
+
+.team-card {
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--main-text);
+    background-color: var(--main-bg);
+}
+
+.team-card__img {
+    width: 140px;
+    height: 140px;
+}
+
+.team-card__img img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.team-card__name {
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+
+.team-card__job {
+    opacity: 0.7;
+    margin-bottom: 24px;
+}
+
+.team-card__social {
+    display: flex;
+    gap: 10px;
+}
+
+.team .mySwiper {
+    padding-bottom: 6rem;
+}
+
+.team .swiper-pagination-bullets {
+    background-color: var(--main-bg);
+    bottom: 0;
+    padding: 8px 0;
+}
+
+.team .swiper-pagination-bullet {
+    width: 32px;
+    height: 32px;
+    background-color: var(--main-bg);
+    /* box-shadow: 0 0 10px rgba(99, 99, 99, 0.8); */
+    border: 1px solid var(--main-color);
+    opacity: 0.7;
+    color: var(--main-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.team .swiper-pagination-bullet-active {
+    background-color: var(--main-color);
+    color: var(--white);
+    opacity: 1;
+}
+
+.no-data {
+    margin: 20px auto;
+}
+
+@media (max-width: 860px) {
+    .team-btns__btn {
+        min-width: 46%;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-btns__btn {
+        width: 100%;
+    }
+
+    .team-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 400px) {
+    .team-card {
+        width: 100%;
+    }
+}
