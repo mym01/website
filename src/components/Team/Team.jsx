@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react";
 
 import "./Team.css";
-import Man from "../../assets/man.png";
+import FemaleAvatar from "../../assets/avataaars.png";
 
-import teamData from "../../data/team.json";
+import teamData from "../../data/team.js";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -16,10 +16,11 @@ import Loading from "./../Ui/Loading/Loading";
 const GithubIcon = (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="41"
+        width="40"
         height="40"
         viewBox="0 0 41 40"
         fill="none"
+        className="github-icon"
     >
         <g clipPath="url(#clip0_91_655)">
             <path
@@ -43,7 +44,7 @@ const GithubIcon = (
 const LinkedinIcon = (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="41"
+        width="40"
         height="40"
         viewBox="0 0 41 40"
         fill="none"
@@ -73,6 +74,20 @@ const LinkedinIcon = (
     </svg>
 );
 
+const BehanceIcon = (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+    >
+        <path
+            fill="#1769FF"
+            d="M8.84 10.835h-1.965v-1.859h1.783c1.878 0 1.646 1.859.182 1.859zm5.789 1.058h2.624c-.115-1.687-2.36-1.81-2.624 0zm-5.9.396h-1.854v1.947h1.824c1.782-.001 1.673-1.947.03-1.947zm15.271-.289c0 6.627-5.373 12-12 12s-12-5.373-12-12 5.373-12 12-12 12 5.373 12 12zm-13.357-.733c1.668-.853 1.607-3.981-1.587-4.028h-4.056v8.73h3.771c3.958 0 3.891-3.967 1.872-4.702zm3.357-3.166h4v-.875h-4v.875zm4.943 3.693c-.545-3.505-6.053-3.711-6.053.872 0 4.526 5.18 3.818 5.949 1.56h-1.848c-.645.748-2.508.531-2.404-1.184h4.41c.009-.555-.009-.953-.054-1.248z"
+        />
+    </svg>
+);
+
 const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -80,20 +95,67 @@ const pagination = {
     },
 };
 
-const Card = ({ name, job }) => {
+const Card = ({ item }) => {
     return (
         <div className="team-card">
             <div className="team-card__img">
-                <img src={Man} alt="team member" />
+                <img
+                    src={
+                        item.image !== ""
+                            ? item.image
+                            : item.gender === "female"
+                            ? FemaleAvatar
+                            : ""
+                    }
+                    alt={item.name}
+                />
             </div>
 
-            <h3 className="team-card__name">{name}</h3>
+            <h3 className="team-card__name" title={item.name}>
+                {item.name}
+            </h3>
 
-            <p className="team-card__job">{job}</p>
+            <p className="team-card__job">{item.track}</p>
 
             <div className="team-card__social">
-                <a href="#">{GithubIcon}</a>
-                <a href="#">{LinkedinIcon}</a>
+                {item.github !== "" ? (
+                    <a
+                        href={item.github}
+                        title="Github"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {GithubIcon}
+                    </a>
+                ) : (
+                    ""
+                )}
+
+                {item.behance !== "" ? (
+                    <a
+                        href={item.behance}
+                        title="behance"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {BehanceIcon}
+                    </a>
+                ) : (
+                    ""
+                )}
+
+                {item.linkedin !== "" ? (
+                    <a
+                        href={item.linkedin}
+                        title="Linkedin"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {LinkedinIcon}
+                    </a>
+                ) : (
+                    ""
+                )}
             </div>
         </div>
     );
@@ -125,13 +187,7 @@ const Team = () => {
             setContent(
                 <div className="team-cards__container">
                     {data.map((item) => {
-                        return (
-                            <Card
-                                key={item.id}
-                                name={item.name}
-                                job={item.job}
-                            />
-                        );
+                        return <Card key={item.id} item={item} />;
                     })}
                 </div>
             );
@@ -166,11 +222,7 @@ const Team = () => {
                                 <div className="team-cards__container">
                                     {items.map((item) => {
                                         return (
-                                            <Card
-                                                key={item.id}
-                                                name={item.name}
-                                                job={item.job}
-                                            />
+                                            <Card key={item.id} item={item} />
                                         );
                                     })}
                                 </div>
@@ -198,21 +250,30 @@ const Team = () => {
                 </button>
                 <button
                     className={`team-btns__btn ${
-                        "web" === btn ? "team-btns__btn--active" : ""
+                        "front-end" === btn ? "team-btns__btn--active" : ""
                     }`}
-                    data-value="web"
+                    data-value="front-end"
                     onClick={btnHandler}
                 >
-                    مطور الويب
+                    مطوري الواجهة الامامية
                 </button>
                 <button
                     className={`team-btns__btn ${
-                        "phone" === btn ? "team-btns__btn--active" : ""
+                        "back-end" === btn ? "team-btns__btn--active" : ""
                     }`}
-                    data-value="phone"
+                    data-value="back-end"
                     onClick={btnHandler}
                 >
-                    مطور تطبيقات الهاتف
+                    مطوري الواجهة الخلفية
+                </button>
+                <button
+                    className={`team-btns__btn ${
+                        "mobile" === btn ? "team-btns__btn--active" : ""
+                    }`}
+                    data-value="mobile"
+                    onClick={btnHandler}
+                >
+                    مطوري تطبيقات الهاتف
                 </button>
                 <button
                     className={`team-btns__btn ${
@@ -221,7 +282,7 @@ const Team = () => {
                     data-value="ui"
                     onClick={btnHandler}
                 >
-                    مصمم الواجهات
+                    مصممي الواجهات
                 </button>
                 <button
                     className={`team-btns__btn ${
@@ -232,14 +293,24 @@ const Team = () => {
                 >
                     المدراء
                 </button>
+
                 <button
                     className={`team-btns__btn ${
-                        "database" === btn ? "team-btns__btn--active" : ""
+                        "graphic" === btn ? "team-btns__btn--active" : ""
                     }`}
-                    data-value="database"
+                    data-value="graphic"
                     onClick={btnHandler}
                 >
-                    قواعد البيانات
+                    مصممي الجرافيك
+                </button>
+                <button
+                    className={`team-btns__btn ${
+                        "other" === btn ? "team-btns__btn--active" : ""
+                    }`}
+                    data-value="other"
+                    onClick={btnHandler}
+                >
+                    اخرون
                 </button>
             </div>
 
