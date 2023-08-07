@@ -108,6 +108,7 @@ const Card = ({ item }) => {
                             : ""
                     }
                     alt={item.name}
+                    loading="lazy"
                 />
             </div>
 
