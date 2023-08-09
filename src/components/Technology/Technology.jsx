@@ -4,7 +4,14 @@ import React from "react";
 
 import "./Technology.css";
 
-const data = [1, 2, 3, 4, 5, 6];
+const data = [
+    "Flutter",
+    "ReactJs",
+    "NodeJs",
+    ".Net",
+    "Cyber security",
+    "Tester",
+];
 
 const flutterIcon = (
     <svg
@@ -25,9 +32,7 @@ const Card = ({ number, heading }) => {
     return (
         <div className={`technology-card`}>
             <span className="technology-card-number">{number}</span>
-            <h3 className="technology-card-heading">
-                {heading} {flutterIcon}
-            </h3>
+            <h3 className="technology-card-heading">{heading}</h3>
         </div>
     );
 };
@@ -35,10 +40,12 @@ const Card = ({ number, heading }) => {
 const Technology = () => {
     return (
         <section className="technology padding-x bg-blue margin-bottom">
-            <h2 className="section-title-white">التقنيات الذي نستخدمها </h2>
+            <h2 className="section-title-white">التقنيات الذي نستخدمها</h2>
             <div className="technology-cards">
-                {data.map((item) => {
-                    return <Card key={item} number={item} heading="Flutter" />;
+                {data.map((item, index) => {
+                    return (
+                        <Card key={index} number={index + 1} heading={item} />
+                    );
                 })}
             </div>
         </section>

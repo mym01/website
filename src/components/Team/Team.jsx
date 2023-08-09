@@ -108,6 +108,7 @@ const Card = ({ item }) => {
                             : ""
                     }
                     alt={item.name}
+                    loading="lazy"
                 />
             </div>
 
@@ -177,7 +178,7 @@ const Team = () => {
         if (btn === "all") {
             setData(teamData);
         } else {
-            setData(teamData.filter((item) => item.category === btn));
+            setData(teamData.filter((item) => item.category.includes(btn)));
         }
     }, [btn]);
 
@@ -194,7 +195,7 @@ const Team = () => {
         }
 
         if (data.length === 0) {
-            console.log("no data");
+            // console.log("no data");
             setContent(
                 <div className="team-cards__container">
                     <h3 className="no-data">No Members here</h3>

@@ -23,7 +23,7 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .help__card {
         width: 100%;
     }

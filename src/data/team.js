@@ -1,5 +1,7 @@
+import Image_2 from "../assets/teamImages/-2.jpeg";
+import Image_1 from "../assets/teamImages/-1.jpeg";
 import Image0 from "../assets/teamImages/0.webp";
-import Image1 from "../assets/teamImages/1.webp";
+// import Image1 from "../assets/teamImages/1.webp";
 import Image2 from "../assets/teamImages/2.webp";
 import Image3 from "../assets/teamImages/3.jpg";
 import Image4 from "../assets/teamImages/4.jpg";
@@ -12,7 +14,7 @@ import Image10 from "../assets/teamImages/10.jpg";
 import Image11 from "../assets/teamImages/11.jpeg";
 import Image12 from "../assets/teamImages/12.webp";
 // import Image13 from "../assets/teamImages/13.jpg";
-import Image14 from "../assets/teamImages/14.jpeg";
+import Image14 from "../assets/teamImages/14.jfif";
 import Image15 from "../assets/teamImages/15.jpeg";
 import Image16 from "../assets/teamImages/16.jpg";
 import Image17 from "../assets/teamImages/17.jpg";
@@ -41,6 +43,26 @@ import Image39 from "../assets/teamImages/39.jpg";
 
 const teamData = [
     {
+        name: "Bassant Hassan",
+        github: "https://github.com/Bassant855",
+        linkedin: "https://www.linkedin.com/in/bassant-hassan-147b29218/",
+        track: "Front-end Team Leader",
+        category: "manger front-end",
+        image: Image_2,
+        id: -2,
+        behance: "",
+    },
+    {
+        name: "Maryam abd elnaby tabl",
+        github: "https://github.com/Maryam-tabl",
+        linkedin: "https://www.linkedin.com/in/maryam-tabl-110181229/",
+        track: "Flutter Team Leader",
+        category: "manger mobile",
+        image: Image_1,
+        id: -1,
+        behance: "",
+    },
+    {
         name: "Mohamed Ahmed Saif-Eldeen ",
         github: "https://github.com/MohamedSaifEldeen2",
         linkedin: "https://www.linkedin.com/in/mohamed-saif-eldeen",
@@ -50,16 +72,16 @@ const teamData = [
         id: 0,
         behance: "",
     },
-    {
-        name: "Mohammed Tarek Elfayoume",
-        github: "GitHub.com/m21102001",
-        linkedin: "https://www.linkedin.com/in/mohammed-elfayoumy-66548222a",
-        track: "Back-end( .Net )",
-        category: "back-end",
-        image: Image1,
-        id: 1,
-        behance: "",
-    },
+    // {
+    //     name: "Mohammed Tarek Elfayoume",
+    //     github: "GitHub.com/m21102001",
+    //     linkedin: "https://www.linkedin.com/in/mohammed-elfayoumy-66548222a",
+    //     track: "Back-end( .Net )",
+    //     category: "back-end",
+    //     image: Image1,
+    //     id: 1,
+    //     behance: "",
+    // },
     {
         name: "Abdulrhman Mezar",
         github: "https://github.com/abdumezar",
@@ -182,11 +204,11 @@ const teamData = [
         gender: "female",
     },
     {
-        name: "Maryam abd elnaby tabl",
-        github: "https://github.com/Maryam-tabl",
-        linkedin: "https://www.linkedin.com/in/maryam-tabl-110181229/",
-        track: "Flutter",
-        category: "mobile",
+        name: "Mohamed Magdy Mohamed",
+        github: "https://github.com/moamed018",
+        linkedin: "https://www.linkedin.com/in/mohamed-magdy-82133215a/",
+        track: "Front-end",
+        category: "front-end",
         image: Image14,
         id: 14,
         behance: "",

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 import NationalFlagOfEgypt from "../../assets/National Flag Of Egypt.svg";
 import Moon from "../../assets/fi-rr-moon.svg";
+import Logo from "../../assets/Logo.svg";
 
 import "./Navbar.css";
 
@@ -22,7 +23,9 @@ const Navbar = ({ isHeroHide }) => {
             }
         >
             <div className="nav-content">
-                <div className="nav-logo"></div>
+                <div className="nav-logo">
+                    <img src={Logo} alt="logo" />
+                </div>
                 <button
                     className="nav-hamburger"
                     onClick={() => {

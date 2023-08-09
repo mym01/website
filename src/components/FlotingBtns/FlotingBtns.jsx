@@ -18,13 +18,16 @@ const FlotingBtns = ({ isHeroHide }) => {
 
     return (
         <Fragment>
-            <button
+            <a
                 className={`btn-floting btn-floting--whatsapp ${
                     isHeroHide ? "btn-floting--show" : ""
                 }`}
+                href="https://wa.me/201126765371"
+                target="_blank"
+                rel="noreferrer"
             >
                 <img src={WhatsApp} alt="whatsapp" />
-            </button>
+            </a>
             <button
                 className={`btn-floting btn-floting--top ${
                     isHeroHide ? "btn-floting--show" : ""
