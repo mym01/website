@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 
 import "./Team.css";
 import FemaleAvatar from "../../assets/avataaars.png";
+import MaleAvatar from "../../assets/avataaars_man.png";
 
 import teamData from "../../data/team.js";
 
@@ -105,7 +106,7 @@ const Card = ({ item }) => {
                             ? item.image
                             : item.gender === "female"
                             ? FemaleAvatar
-                            : ""
+                            : MaleAvatar
                     }
                     alt={item.name}
                     loading="lazy"
@@ -216,6 +217,7 @@ const Team = () => {
                     pagination={pagination}
                     modules={[Pagination]}
                     className="mySwiper"
+                    onUpdate={(swiper) => swiper.slideTo(0, 200, false)}
                 >
                     {arraySlide.map((items, index) => {
                         return (

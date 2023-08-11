@@ -10,7 +10,7 @@ const data = [
     "NodeJs",
     ".Net",
     "Cyber security",
-    "Tester",
+    "Testing",
 ];
 
 const flutterIcon = (

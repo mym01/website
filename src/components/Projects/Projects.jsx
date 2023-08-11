@@ -199,6 +199,7 @@ const Projects = () => {
                     spaceBetween={0}
                     centeredSlides={true}
                     slidesPerView={1}
+                    onUpdate={(swiper) => swiper.slideTo(0, 200, false)}
                     loop={true}
                     breakpoints={{
                         1860: {
